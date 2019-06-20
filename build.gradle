@@ -33,6 +33,6 @@ dependencies {
 //    implementation("org.springframework.session:spring-session-jdbc")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("com.oracle:ojdbc6:11.2.0.3")
-    implementation("com.alibaba:druid:1.1.9")
-//    implementation("com.alibaba:druid-spring-boot-starter:1.1.10")
+//    implementation("com.alibaba:druid:1.1.9")
+    implementation("com.alibaba:druid-spring-boot-starter:1.1.17")
 }

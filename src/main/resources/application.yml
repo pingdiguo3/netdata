@@ -3,27 +3,30 @@ server:
 
 spring:
   datasource:
-    #    name: portal
-    username: portal
-    password: 00000000
-    driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@192.168.126.128:1521:PORTAL
-#    url: jdbc\:oracle\:thin\:@192.168.201.189\:1521\:PORTAL
-#     使用druid数据源
-#    type: com.alibaba.druid.pool.DruidDataSource
-    filters: stat
-    maxActive: 20
-    initialSize: 1
-    maxWait: 60000
-    minIdle: 1
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: select 1 from dual
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    maxOpenPreparedStatements: 20
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #    name: portal
+      username: portal
+      password: 00000000
+      driver-class-name: oracle.jdbc.OracleDriver
+      url: jdbc:oracle:thin:@//192.168.126.128:1521/PORTAL
+      #    url: jdbc\:oracle\:thin\:@192.168.201.189\:1521\:PORTAL
+      #     使用druid数据源
+      filters: stat,wall,config
+      max-active: 100
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1 from dual
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
 
 jpa:
   hibernate:
