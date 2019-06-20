@@ -1,0 +1,38 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.0.RELEASE'
+    id 'java'
+}
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+group = 'com.java'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenLocal()
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    mavenCentral()
+}
+configurations{
+    compile.exclude module: 'spring-boot-starter-logback'
+}
+
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+//    implementation("org.springframework.boot:spring-boot-configuration-processor")
+//    implementation("org.springframework.boot:spring-boot-starter-log4j2")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+//    implementation("org.springframework.session:spring-session-jdbc")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("com.oracle:ojdbc6:11.2.0.3")
+    implementation("com.alibaba:druid:1.1.9")
+//    implementation("com.alibaba:druid-spring-boot-starter:1.1.10")
+}
