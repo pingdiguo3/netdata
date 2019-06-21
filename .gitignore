@@ -10,7 +10,12 @@ gen
 .gradle/
 .idea/modules/
 build/
-gradle/
+gradle/*
 settings.gradle
 gradlew.bat
-/out/
+/out/*
+HELP.md
+/gradlew
+/gradlew.bat
+/HELP.md
+/settings.gradle
