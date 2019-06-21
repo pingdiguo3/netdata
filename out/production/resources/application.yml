@@ -1,0 +1,37 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #    name: portal
+      username: portal
+      password: 00000000
+      driver-class-name: oracle.jdbc.OracleDriver
+      url: jdbc:oracle:thin:@//192.168.126.128:1521/PORTAL
+      #    url: jdbc\:oracle\:thin\:@192.168.201.189\:1521\:PORTAL
+      #     使用druid数据源
+      filters: stat,wall,config
+      max-active: 100
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1 from dual
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
+
+jpa:
+  hibernate:
+    ddl-auto: update
+    show-sql: true
+
+logger:
+  config: classpath:log4j2.xml
