@@ -7,9 +7,6 @@
 *.iml
 out
 gen
-.gitignore
-.gradle/5.4.1/vcsMetadata-1/
+.gradle/
 .idea/modules/
-build/generated/
 build/
-
